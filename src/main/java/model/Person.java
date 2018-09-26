@@ -10,6 +10,9 @@ public class Person {
         this.age = age;
     }
 
+    public Person() {
+    }
+
     public String getName() {
         return name;
     }
@@ -26,11 +29,20 @@ public class Person {
         this.age = age;
     }
 
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    public void calculateAge(int age) {
+        this.age += age;
+    }
+
+    public Person getCopy() {
+        return new Person(name, age);
     }
 }

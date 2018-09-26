@@ -10,8 +10,7 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) {
 
-        List<Person> person = new ArrayList<Person>();
-
+        List<Person> person = new ArrayList<>();
 
         person.add(new Person("Asia", 20));
         person.add(new Person("Asia", 15));
