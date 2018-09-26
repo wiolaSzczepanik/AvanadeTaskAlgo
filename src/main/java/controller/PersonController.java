@@ -12,11 +12,14 @@ public class PersonController {
         int age=0;
 
         for(int i=0; i<input.size(); i++){
-            for(int j=1; j<input.size()-i; j++){
-                if(input.get(j).name ==(input.get(i).name)){
-                  age = age + input.get(i).age + input.get(j).age;
-                  Person newPerson = new Person(input.get(i).name, age);
-                  records.add(newPerson);
+            if(!records.contains(input.get(i).name)) {
+                for (int j = 1; j < input.size() - i; j++) {
+                    if (input.get(j).name == (input.get(i).name)) {
+                        age = age + input.get(i).age + input.get(j).age;
+                        Person newPerson = new Person(input.get(i).name, age);
+                        records.add(newPerson);
+                    }
+
                 }
             }
         }
