@@ -1,8 +1,10 @@
+import controller.PersonCompare;
 import controller.PersonController;
 import model.Person;
 import view.PersonView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Application {
@@ -22,6 +24,8 @@ public class Application {
         PersonController personController = new PersonController();
         List<Person> records = personController.transform(person);
 
+        PersonCompare comparator = new PersonCompare();
+        Collections.sort(records, comparator);
 
         PersonView personView = new PersonView();
         personView.displayPersons(records);
